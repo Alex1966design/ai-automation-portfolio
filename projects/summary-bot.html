@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Summary Bot — Telegram + LLM + n8n</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617; color: #e5e7eb; margin: 0; padding: 24px 16px 64px; line-height: 1.6; }
+    .page { max-width: 900px; margin: 0 auto; }
+    a { color: #a5b4fc; text-decoration: none; }
+    .back { font-size: 0.9rem; margin-bottom: 16px; display: inline-block; }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; margin-top: 24px; margin-bottom: 6px; }
+    .muted { color: #9ca3af; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .pill { font-size: 0.8rem; padding: 4px 8px; border-radius: 999px;
+      border: 1px solid #1f2937; background: #020617; color: #9ca3af; }
+    .pill--accent { border-color: #22c55e; color: #bbf7d0; }
+    .card { background: #020617; border-radius: 16px; border: 1px solid #1f2937;
+      padding: 16px 18px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="../index.html" class="back">← На главную</a>
+    <h1>Summary Bot</h1>
+    <p class="muted">Автоматическая генерация обзоров переписок в Telegram с использованием LLM и n8n.</p>
+
+    <div class="pill-row">
+      <span class="pill pill--accent">n8n</span>
+      <span class="pill">Telegram Bot API</span>
+      <span class="pill">OpenAI</span>
+      <span class="pill">Webhooks</span>
+    </div>
+
+    <div class="card">
+      <h2>Задача</h2>
+      <p>
+        Автоматически подводить итоги обсуждений в рабочих чатах: собирать сообщения за период
+        и генерировать краткое резюме, которое уходит в отдельный канал или чат.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Архитектура решения</h2>
+      <ul>
+        <li>n8n Webhook принимает входящие сообщения из Telegram;</li>
+        <li>Сообщения сохраняются и агрегируются за выбранный период;</li>
+        <li>По расписанию (cron) вызывается узел LLM (OpenAI) для генерации summary;</li>
+        <li>Готовый обзор отправляется обратно в Telegram-канал/чат.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Технологии</h2>
+      <ul>
+        <li>n8n (webhook, cron, HTTP Request, OpenAI node);</li>
+        <li>Telegram Bot API / токен бота;</li>
+        <li>OpenAI API для генерации summary;</li>
+        <li>Опционально — Google Sheets / БД для хранения истории.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Что это даёт бизнесу</h2>
+      <p>
+        Руководители и участники команд получают короткий обзор без необходимости перечитывать весь чат.
+        Это удобно для созвонов, статус-апдейтов и передачи задач.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
