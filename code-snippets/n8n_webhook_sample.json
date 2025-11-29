@@ -1,0 +1,39 @@
+{
+  "name": "Telegram Summary Bot (simplified)",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Telegram Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [300, 300]
+    },
+    {
+      "id": "2",
+      "name": "Append to buffer",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [550, 300],
+      "notes": "Сохранить сообщение в хранилище/БД для последующего summary."
+    },
+    {
+      "id": "3",
+      "name": "Generate Summary (OpenAI)",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [800, 300]
+    },
+    {
+      "id": "4",
+      "name": "Send to Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Telegram Webhook": {
+      "main": [[{ "node": "Append to buffer", "type": "main", "index": 0 }]]
+    }
+  }
+}
