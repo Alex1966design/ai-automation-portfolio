@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Александр Каменецкий — AI / Automation Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Портфолио AI / Automation Engineer — Александр Каменецкий" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-card: #0f172a;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-xl: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 0 0, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+
+    header .name {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    header .role {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .chip--accent {
+      border-color: rgba(34, 197, 94, 0.7);
+      background: var(--accent-soft);
+      color: #bbf7d0;
+    }
+
+    main {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+        border-radius: 18px;
+        align-items: flex-start;
+      }
+    }
+
+    section {
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .card + .card {
+      margin-top: 14px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.6rem, 2.2vw, 2rem);
+      font-weight: 650;
+      margin-bottom: 6px;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .tag--accent {
+      border-color: rgba(34, 197, 94, 0.85);
+      color: #bbf7d0;
+      background: var(--accent-soft);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      color: #a5b4fc;
+    }
+
+    .project-link span {
+      font-size: 1rem;
+      transform: translateY(1px);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: var(--muted);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .contact-row a {
+      color: #e5e7eb;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .hl {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="name">Александр Каменецкий</div>
+        <div class="role">AI / Automation Engineer · LLM-ассистенты и интеграции</div>
+      </div>
+      <div class="chip-row">
+        <div class="chip chip--accent">OpenAI · RAG · n8n · Telegram</div>
+        <div class="chip">Бэкграунд: Сахалин Энерджи, Supply Chain, фриланс</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Левая колонка -->
+      <div>
+        <section class="card">
+          <div class="section-title">Обо мне</div>
+          <h1 class="hero-title">Автоматизирую процессы и собираю AI-решения под бизнес-задачи</h1>
+          <p class="hero-text">
+            Строю LLM-ассистентов, ETL-пайплайны и интеграции (API, Sheets, Telegram, Qdrant), которые
+            сокращают рутину и ускоряют принятие решений. Люблю проекты, где нужно быстро собрать прототип,
+            протестировать гипотезу и довести решение до продакшена.
+          </p>
+          <div class="pill-list">
+            <div class="pill">Python · SQL</div>
+            <div class="pill">OpenAI · RAG · embeddings</div>
+            <div class="pill">Qdrant · SQLite</div>
+            <div class="pill">n8n · Webhooks</div>
+            <div class="pill">Telegram Bot API</div>
+            <div class="pill">Google Sheets API</div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">Проекты</div>
+
+          <article class="card">
+            <div class="card-title">AI-ассистент «Моё Дело» (RAG + Qdrant + OpenAI)</div>
+            <div class="card-subtitle">Корпоративный ассистент по налоговой реформе 2026 на внутренних документах.</div>
+            <p class="muted">
+              Векторная база знаний в Qdrant, поиск релевантных фрагментов, строгий системный промпт под законодательство.
+              Интерфейс на Gradio, логирование запросов и ответов.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">RAG</span>
+              <span class="tag">Qdrant</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Gradio</span>
+              <span class="tag">Python</span>
+            </div>
+            <!-- Заменишь ссылку на реальный репозиторий, когда выложишь код -->
+            <a class="project-link" href="https://github.com/Alex1966design" target="_blank" rel="noreferrer">
+              Описание и код — в подготовке <span>↗</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">Summary Bot для Telegram (LLM + n8n)</div>
+            <div class="card-subtitle">Автоматические обзоры переписок и отправка резюме в канал/чат.</div>
+            <p class="muted">
+              n8n-workflow с webhook’ом, накоплением сообщений за период и генерацией summary через LLM.
+              Итоги по расписанию улетают в выбранный канал.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">n8n</span>
+              <span class="tag">Telegram API</span>
+              <span class="tag">OpenAI</span>
+              <span class="tag">Автоотчётность</span>
+            </div>
+            <a class="project-link" href="https://github.com/Alex1966design/Zerocoder-2025" target="_blank" rel="noreferrer">
+              Репозиторий Zerocoder-проектов ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">PilotAccessBot — Telegram-бот с доступом и SQLite</div>
+            <div class="card-subtitle">Демо-бот с авторизацией и хранением профилей пользователей.</div>
+            <p class="muted">
+              Регистрация /start, сохранение профиля в SQLite, команда /profile для просмотра данных.
+              Основа для внутренних сервисов и закрытых кабинетов.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">Telegram Bot</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">python-telegram-bot</span>
+            </div>
+            <a class="project-link" href="https://t.me/PilotAccessDemo_bot" target="_blank" rel="noreferrer">
+              Открыть демо-бота в Telegram ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">Alina — нейро-продавец (alina-mega-sales-aibot)</div>
+            <div class="card-subtitle">AI-ассистент, который ведёт диалог как опытный менеджер по продажам.</div>
+            <p class="muted">
+              Продуманная структура промптов, сценарии диалогов, интеграция с Telegram-ботом и возможностью
+              адаптировать ассистента под любой продукт.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">Sales AI</span>
+              <span class="tag">Prompt-engineering</span>
+              <span class="tag">Telegram</span>
+            </div>
+            <a class="project-link" href="https://github.com/Alex1966design/alina-mega-sales-aibot" target="_blank" rel="noreferrer">
+              Код проекта на GitHub ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">AI Resume Scorer</div>
+            <div class="card-subtitle">Оценка резюме и подсказки по улучшению с помощью LLM.</div>
+            <p class="muted">
+              Парсинг резюме, прогон через LLM-модель, выдача оценки и списка конкретных улучшений.
+              Используется для ускорения отбора кандидатов.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">LLM</span>
+              <span class="tag">Python</span>
+              <span class="tag">Streamlit / Gradio</span>
+            </div>
+            <a class="project-link" href="https://github.com/Alex1966design/ai-resume-scorer-v3" target="_blank" rel="noreferrer">
+              Репозиторий ai-resume-scorer-v3 ↗
+            </a>
+          </article>
+        </section>
+      </div>
+
+      <!-- Правая колонка -->
+      <aside>
+        <section class="card">
+          <div class="section-title">Ключевые навыки</div>
+          <ul>
+            <li>• LLM-ассистенты, RAG, работа с контекстом</li>
+            <li>• Автоматизация процессов и отчётности (Sheets, n8n)</li>
+            <li>• Интеграции через API (Telegram, OpenAI, Google)</li>
+            <li>• Проектирование пайплайнов: ETL → БД → отчёты</li>
+            <li>• Настройка промптов и сценариев для AI-агентов</li>
+          </ul>
+          <div class="tag-row" style="margin-top:12px;">
+            <span class="tag">OpenAI</span>
+            <span class="tag">Qdrant</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Google Sheets API</span>
+            <span class="tag">LLM-агенты</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-title">Опыт</div>
+          <div class="card-title">Supply Chain Consultants LLC</div>
+          <div class="card-subtitle">ML / AI Engineer · 2024 — н.в.</div>
+          <p class="muted">
+            Разработка AI-агентов, автоматизация документооборота, интеграции с Telegram и Google Sheets,
+            создание кастомных RAG-решений.
+          </p>
+          <br />
+          <div class="card-title">Сахалин Энерджи</div>
+          <div class="card-subtitle">Data & Process Automation · 2010 — 2024</div>
+          <p class="muted">
+            Автоматизация бизнес-процессов, отчётность для менеджмента, аналитика данных,
+            интеграция внутренних систем.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="section-title">Контакты</div>
+          <div class="contact-row">
+            <div>
+              <div class="contact-label">Email</div>
+              <a href="mailto:kamenetskyalexander1@gmail.com">kamenetskyalexander1@gmail.com</a>
+            </div>
+            <div>
+              <div class="contact-label">Telegram</div>
+              <a href="https://t.me/kamenetsky_alex" target="_blank" rel="noreferrer">@kamenetsky_alex</a>
+            </div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <a href="https://github.com/Alex1966design" target="_blank" rel="noreferrer">github.com/Alex1966design</a>
+            </div>
+            <div class="muted">
+              Готов к проектной работе и долгосрочному сотрудничеству в области автоматизации и AI.
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
