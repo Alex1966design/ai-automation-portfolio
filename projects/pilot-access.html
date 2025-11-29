@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>PilotAccessBot — Telegram-бот с авторизацией</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617; color: #e5e7eb; margin: 0; padding: 24px 16px 64px; line-height: 1.6; }
+    .page { max-width: 900px; margin: 0 auto; }
+    a { color: #a5b4fc; text-decoration: none; }
+    .back { font-size: 0.9rem; margin-bottom: 16px; display: inline-block; }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; margin-top: 24px; margin-bottom: 6px; }
+    .muted { color: #9ca3af; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .pill { font-size: 0.8rem; padding: 4px 8px; border-radius: 999px;
+      border: 1px solid #1f2937; background: #020617; color: #9ca3af; }
+    .pill--accent { border-color: #22c55e; color: #bbf7d0; }
+    .card { background: #020617; border-radius: 16px; border: 1px solid #1f2937;
+      padding: 16px 18px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="../index.html" class="back">← На главную</a>
+    <h1>PilotAccessBot</h1>
+    <p class="muted">Демо-бот с авторизацией и хранением профилей пользователей в SQLite.</p>
+
+    <div class="pill-row">
+      <span class="pill pill--accent">Telegram Bot</span>
+      <span class="pill">Python</span>
+      <span class="pill">SQLite</span>
+    </div>
+
+    <div class="card">
+      <h2>Функциональность</h2>
+      <ul>
+        <li>/start — регистрация пользователя в базе;</li>
+        <li>/profile — вывод сохранённого профиля;</li>
+        <li>Хранение telegram_id, username, имени и ФИО.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Техническая реализация</h2>
+      <ul>
+        <li>Python + <code>python-telegram-bot</code>;</li>
+        <li>SQLite для хранения пользователей;</li>
+        <li>Простая архитектура, готовая к расширению под роли/доступы.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Демо</h2>
+      <p>Бот для демонстрации работы:</p>
+      <p><a href="https://t.me/PilotAccessDemo_bot" target="_blank">@PilotAccessDemo_bot ↗</a></p>
+    </div>
+  </div>
+</body>
+</html>
