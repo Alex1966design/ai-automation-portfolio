@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI-ассистент «Моё Дело» — RAG + Qdrant + OpenAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 24px 16px 64px;
+      line-height: 1.6;
+    }
+    .page { max-width: 900px; margin: 0 auto; }
+    a { color: #a5b4fc; text-decoration: none; }
+    .back { font-size: 0.9rem; margin-bottom: 16px; display: inline-block; }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; margin-top: 24px; margin-bottom: 6px; }
+    .muted { color: #9ca3af; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .pill {
+      font-size: 0.8rem; padding: 4px 8px; border-radius: 999px;
+      border: 1px solid #1f2937; background: #020617;
+      color: #9ca3af;
+    }
+    .pill--accent { border-color: #22c55e; color: #bbf7d0; }
+    .card {
+      background: #020617;
+      border-radius: 16px;
+      border: 1px solid #1f2937;
+      padding: 16px 18px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="../index.html" class="back">← На главную</a>
+    <h1>AI-ассистент «Моё Дело»</h1>
+    <p class="muted">Корпоративный RAG-ассистент по налоговой реформе 2026 на базе внутренних документов.</p>
+
+    <div class="pill-row">
+      <span class="pill pill--accent">RAG</span>
+      <span class="pill">Qdrant</span>
+      <span class="pill">OpenAI API</span>
+      <span class="pill">Gradio</span>
+      <span class="pill">Python</span>
+    </div>
+
+    <div class="card">
+      <h2>Цель проекта</h2>
+      <p>
+        Сократить время поиска ответов по новой налоговой реформе для сотрудников и клиентов компании
+        «Моё Дело». Сделать ассистента, который отвечает строго по внутренней базе знаний,
+        без "выдумок" модели.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Что делает ассистент</h2>
+      <ul>
+        <li>Индексирует документы компании (PDF, DOCX, регламенты) в Qdrant;</li>
+        <li>Получает вопрос пользователя и ищет релевантные фрагменты;</li>
+        <li>Передаёт найденный контекст в LLM (OpenAI) с жёстким системным промптом;</li>
+        <li>Возвращает развернутый ответ с отсылкой к источникам.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Технологический стек</h2>
+      <ul>
+        <li>Python (OpenAI SDK, qdrant-client, python-dotenv);</li>
+        <li>Qdrant — хранение векторных представлений документов;</li>
+        <li>Модель embeddings: <code>text-embedding-3-small</code>;</li>
+        <li>LLM: <code>gpt-4.1-mini</code> (по состоянию на разработку);</li>
+        <li>Gradio — интерфейс для сотрудников/клиента.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Результат</h2>
+      <p>
+        Время получения ответа на сложные вопросы по реформе сократилось с 15–20 минут (ручной поиск)
+        до ~15 секунд. Ассистент возвращает только то, что реально есть в документах, и явно говорит,
+        если информации недостаточно.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Код и демо</h2>
+      <p class="muted">
+        Репозиторий с кодом и примером RAG-ассистента будет вынесен отдельно.
+        Пока можно посмотреть общий профиль GitHub:
+      </p>
+      <p><a href="https://github.com/Alex1966design" target="_blank">github.com/Alex1966design ↗</a></p>
+    </div>
+  </div>
+</body>
+</html>
