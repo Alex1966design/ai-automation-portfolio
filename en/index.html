@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alexander Kamenetsky — AI / Automation Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617; color: #e5e7eb; margin: 0; padding: 24px 16px 64px; line-height: 1.6; }
+    .page { max-width: 1100px; margin: 0 auto; }
+    a { color: #a5b4fc; text-decoration: none; }
+    header { display: flex; flex-wrap: wrap; justify-content: space-between;
+      gap: 16px; padding: 18px 20px; border-radius: 999px;
+      border: 1px solid #1f2937; background: rgba(15,23,42,0.9); backdrop-filter: blur(18px); }
+    .name { font-weight: 600; letter-spacing: 0.02em; }
+    .role { font-size: 0.9rem; color: #9ca3af; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; }
+    .chip { padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9); color: #9ca3af; }
+    .chip--accent { border-color: rgba(34,197,94,0.7); color: #bbf7d0;
+      background: rgba(34,197,94,0.12); }
+    main { margin-top: 26px; display: grid;
+      grid-template-columns: minmax(0,3fr) minmax(0,2fr); gap: 24px; }
+    @media (max-width: 900px) { main { grid-template-columns: 1fr; } header{border-radius:18px;} }
+    .card { background: rgba(15,23,42,0.96); border-radius: 18px;
+      border: 1px solid #1f2937; padding: 18px; box-shadow: 0 20px 40px rgba(15,23,42,0.9); }
+    .section-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: #9ca3af; margin-bottom: 10px; }
+    .hero-title { font-size: clamp(1.6rem, 2.2vw, 2rem); font-weight: 650; margin-bottom: 6px; }
+    .hero-text { color: #9ca3af; font-size: 0.95rem; }
+    .pill-list, .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .pill, .tag { font-size: 0.8rem; padding: 4px 8px; border-radius: 999px;
+      background: rgba(15,23,42,0.9); border: 1px solid rgba(55,65,81,0.9); color: #9ca3af; }
+    .tag--accent { border-color: rgba(34,197,94,0.85); color: #bbf7d0;
+      background: rgba(34,197,94,0.12); }
+    .card-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .card-subtitle { font-size: 0.85rem; color: #9ca3af; margin-bottom: 8px; }
+    .muted { color: #9ca3af; font-size: 0.9rem; }
+    .project-link { display: inline-flex; gap: 6px; font-size: 0.85rem; margin-top: 8px;
+      color: #a5b4fc; }
+    .contact-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em;
+      color: #9ca3af; }
+    .contact-row { display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="name">Alexander Kamenetsky</div>
+        <div class="role">AI / Automation Engineer · LLM assistants & integrations</div>
+      </div>
+      <div class="chip-row">
+        <div class="chip chip--accent">OpenAI · RAG · n8n · Telegram</div>
+        <div class="chip">Based in Bangkok / Moscow · Remote-friendly</div>
+        <div class="chip"><a href="../index.html">🇷🇺 RU version</a></div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <section class="card">
+          <div class="section-title">About</div>
+          <h1 class="hero-title">I build AI assistants and automation for real business workflows</h1>
+          <p class="hero-text">
+            I design and implement LLM-based assistants, ETL pipelines and integrations (API, Sheets,
+            Telegram, Qdrant) that reduce routine work and speed up decision making.
+          </p>
+          <div class="pill-list">
+            <div class="pill">Python · SQL</div>
+            <div class="pill">OpenAI · RAG · embeddings</div>
+            <div class="pill">Qdrant</div>
+            <div class="pill">n8n · Webhooks</div>
+            <div class="pill">Telegram Bot API</div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">Projects</div>
+
+          <article class="card">
+            <div class="card-title">Corporate AI Assistant (“Moё Delo”)</div>
+            <div class="card-subtitle">RAG assistant answering questions on Russian tax reform 2026.</div>
+            <p class="muted">
+              Vector search in Qdrant + OpenAI completion with strict system prompt.
+              Answers strictly from internal documents.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">RAG</span>
+              <span class="tag">Qdrant</span>
+              <span class="tag">OpenAI</span>
+            </div>
+            <a class="project-link" href="../projects/rag-assistant.html">Details ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">Summary Bot (Telegram + n8n)</div>
+            <div class="card-subtitle">Generates daily / weekly chat summaries and posts them to a channel.</div>
+            <p class="muted">
+              n8n workflow collects messages, calls LLM for summarisation and sends results to Telegram.
+            </p>
+            <div class="tag-row">
+              <span class="tag tag--accent">n8n</span>
+              <span class="tag">Telegram Bot API</span>
+              <span class="tag">OpenAI</span>
+            </div>
+            <a class="project-link" href="../projects/summary-bot.html">Details ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">PilotAccessBot</div>
+            <div class="card-subtitle">Telegram demo bot with user registration and SQLite storage.</div>
+            <p class="muted">
+              Stores user profiles and can be extended to internal services and access control.
+            </p>
+            <a class="project-link" href="../projects/pilot-access.html">Details ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="card-title">AI Resume Scorer</div>
+            <div class="card-subtitle">LLM-based tool for resume scoring and improvement hints.</div>
+            <p class="muted">
+              Takes a resume, evaluates it on several criteria and suggests concrete improvements.
+            </p>
+            <a class="project-link" href="../projects/ai-resume-scorer.html">Details ↗</a>
+          </article>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card">
+          <div class="section-title">Experience</div>
+          <div class="card-title">Supply Chain Consultants LLC</div>
+          <div class="card-subtitle">ML / AI Engineer · 2024 — now</div>
+          <p class="muted">
+            Building AI agents, automating document workflows, Telegram & Google Sheets integrations,
+            RAG-based assistants.
+          </p>
+          <br />
+          <div class="card-title">Sakhalin Energy</div>
+          <div class="card-subtitle">Data & Process Automation · 2010 — 2024</div>
+          <p class="muted">
+            Business process automation, management reporting, internal analytics and system integrations.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="section-title">Contacts</div>
+          <div class="contact-row">
+            <div>
+              <div class="contact-label">Email</div>
+              <a href="mailto:kamenetskyalexander1@gmail.com">kamenetskyalexander1@gmail.com</a>
+            </div>
+            <div>
+              <div class="contact-label">Telegram</div>
+              <a href="https://t.me/kamenetsky_alex" target="_blank">@kamenetsky_alex</a>
+            </div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <a href="https://github.com/Alex1966design" target="_blank">github.com/Alex1966design</a>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
